@@ -3,138 +3,258 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Agriculture</title>
+<title>Advanced Smart Agriculture</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f9f4;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#eef7ee;
+    color:#222;
 }
 
 /* Navbar */
-nav {
-    background: #2e7d32;
-    padding: 15px;
-    color: white;
-    text-align: center;
-    font-size: 22px;
+nav{
+    background:linear-gradient(90deg,#1b5e20,#43a047);
+    color:white;
+    padding:18px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-/* Hero Section */
-.hero {
-    height: 90vh;
-    background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef') no-repeat center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-}
-.hero h1 {
-    font-size: 50px;
-    animation: fadeIn 3s;
+/* Hero */
+.hero{
+    height:100vh;
+    background:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef') center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
 }
 
-/* Sections */
-.section {
-    padding: 40px;
-    text-align: center;
-}
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.card {
-    background: white;
-    padding: 20px;
-    width: 250px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-.card:hover {
-    transform: scale(1.05);
+.hero-content{
+    background:rgba(0,0,0,0.45);
+    padding:30px;
+    border-radius:15px;
+    animation:fadeIn 2s ease-in-out;
 }
 
-/* Button */
-button {
-    padding: 10px 20px;
-    background: #388e3c;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+.hero h1{
+    font-size:55px;
 }
-button:hover {
-    background: #1b5e20;
+
+.hero p{
+    margin-top:10px;
+    font-size:20px;
+}
+
+/* Section */
+.section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.section h2{
+    margin-bottom:30px;
+    font-size:36px;
+    color:#2e7d32;
+}
+
+/* Cards */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* Dashboard */
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.box{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 12px rgba(0,0,0,0.1);
+}
+
+.box h3{
+    color:#388e3c;
+    margin-bottom:10px;
+}
+
+/* Buttons */
+button{
+    padding:12px 24px;
+    border:none;
+    background:#2e7d32;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    margin-top:15px;
+}
+
+button:hover{
+    background:#1b5e20;
 }
 
 /* Footer */
-footer {
-    background: #2e7d32;
-    color: white;
-    text-align: center;
-    padding: 15px;
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:18px;
+    margin-top:50px;
 }
 
 /* Animation */
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<nav>🌾 Smart Agriculture System</nav>
+<nav>🌾 Smart Agriculture AI System</nav>
 
-<div class="hero">
-    <h1>Welcome to Modern Farming 🚜</h1>
-</div>
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Future of Farming 🚜</h1>
+        <p>Smart Technology + Green Agriculture</p>
+        <button onclick="scrollToSection()">Explore</button>
+    </div>
+</section>
 
-<div class="section">
-    <h2>🌱 Farming Techniques</h2>
+<!-- Techniques -->
+<section class="section" id="mainSection">
+    <h2>🌱 Modern Farming Techniques</h2>
+
     <div class="cards">
         <div class="card">
-            <h3>Organic Farming</h3>
-            <p>Natural fertilizers and eco-friendly farming methods.</p>
+            <h3>🌿 Organic Farming</h3>
+            <p>Eco-friendly fertilizers and healthy food production.</p>
         </div>
+
         <div class="card">
-            <h3>Hydroponics</h3>
-            <p>Soil-less farming using nutrient-rich water.</p>
+            <h3>💧 Smart Irrigation</h3>
+            <p>Automatic water control using moisture sensors.</p>
         </div>
+
         <div class="card">
-            <h3>Smart Irrigation</h3>
-            <p>Automatic watering using sensors and IoT.</p>
+            <h3>☀ Solar Energy</h3>
+            <p>Use solar panels for pumps and machines.</p>
+        </div>
+
+        <div class="card">
+            <h3>📡 Drone Monitoring</h3>
+            <p>Monitor crop health using drones.</p>
         </div>
     </div>
-</div>
+</section>
 
-<div class="section">
-    <h2>🌾 Crop Information</h2>
-    <p>Click the button to see today's crop tip!</p>
-    <button onclick="showTip()">Show Tip</button>
-    <p id="tip"></p>
-</div>
+<!-- Live Dashboard -->
+<section class="section">
+    <h2>📊 Live Farm Dashboard</h2>
+
+    <div class="dashboard">
+
+        <div class="box">
+            <h3>🌡 Temperature</h3>
+            <p id="temp">-- °C</p>
+        </div>
+
+        <div class="box">
+            <h3>💧 Soil Moisture</h3>
+            <p id="moisture">-- %</p>
+        </div>
+
+        <div class="box">
+            <h3>☁ Weather</h3>
+            <p id="weather">--</p>
+        </div>
+
+        <div class="box">
+            <h3>🌾 Crop Tip</h3>
+            <p id="tip">Click below</p>
+            <button onclick="showTip()">Show Tip</button>
+        </div>
+
+    </div>
+</section>
 
 <footer>
-    © 2026 Smart Agriculture | Developed by You 🌿
+© 2026 Advanced Smart Agriculture | Made by You 🌿
 </footer>
 
 <script>
-function showTip() {
+function scrollToSection(){
+    document.getElementById("mainSection").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+/* Random Dashboard Data */
+function updateData(){
+    document.getElementById("temp").innerText =
+        Math.floor(Math.random()*15+20) + " °C";
+
+    document.getElementById("moisture").innerText =
+        Math.floor(Math.random()*50+40) + " %";
+
+    const weather = ["Sunny ☀","Cloudy ☁","Rainy 🌧","Windy 🌬"];
+    document.getElementById("weather").innerText =
+        weather[Math.floor(Math.random()*weather.length)];
+}
+
+setInterval(updateData,2000);
+updateData();
+
+/* Tips */
+function showTip(){
     const tips = [
-        "Water crops early morning for best results.",
-        "Use organic compost to improve soil health.",
-        "Rotate crops to maintain soil fertility.",
-        "Check soil moisture before irrigation."
+        "Use compost for healthy soil 🌱",
+        "Water crops early morning 💧",
+        "Rotate crops every season 🌾",
+        "Check pests regularly 🐛",
+        "Use drip irrigation for savings 💦"
     ];
-    let randomTip = tips[Math.floor(Math.random() * tips.length)];
-    document.getElementById("tip").innerText = randomTip;
+
+    document.getElementById("tip").innerText =
+        tips[Math.floor(Math.random()*tips.length)];
 }
 </script>
 
